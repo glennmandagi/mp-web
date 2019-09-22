@@ -1,0 +1,24 @@
+
+				<div class="outertight m-r-no">
+					<h5 class="line"><span>Berita Foto</span></h5>
+					<?php foreach(array_slice($q_news_tou->result(), 0, 1) as $row):?>
+						<img src="<?php echo  base_url().'assets/images/news/thumb/'.$row->news_image?>" alt="MyPassion" />						
+						<h6 class="regular">		
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<?php echo $this->custom->cut($row->news_title, 45)?>
+							</a>
+						</h6>
+						<p><?php echo $this->custom->trim($row->news_content, 20)?></p>
+					<?php endforeach?>
+					<ul class="block">
+						<?php foreach(array_slice($q_news_tou->result(), 1, 5) as $row):?>
+						<li>
+							<p>													
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>							
+							</p>
+						</li>
+						<?php endforeach?>
+					</ul>										
+				</div>		

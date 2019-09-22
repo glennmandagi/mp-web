@@ -1,0 +1,868 @@
+<!-- Content -->
+<section id="content">
+	<div class="container">
+		<!-- Main Content -->		
+		<div class="column" style="margin:0 0 10px 0px">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Manado Post Online -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9528794433985327"
+     data-ad-slot="6662265491"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>	
+			</a>
+		</div>
+	
+
+		<!--Main Banner--> 	
+		<div class="main-content">
+			<div class="column-two-third ">
+				<div class="mpW">
+				<h5 class="line"><span style="color: #FFF"><a href="<?php echo base_url()?>berita/all">MANADO POST UPDATE</a></span></h5>
+				<ul class="footnav">
+					<?php foreach(array_slice($q_latest->result(), 0, 5) as $row):?>
+					<li>
+						<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+							<i class="icon-right-open"></i>	
+							<?php echo $this->custom->cut($row->news_title, 38)?>
+						</a>						
+					</li>
+					<?php endforeach ?>					
+				</ul>
+				</div>
+			</div>
+			
+			<div class="main-slider column-two-third" style="position: relative">
+				<h5 class="line"><span>Berita Utama</span></h5>
+				<div class="flexslider">
+					<ul class="slides">
+						<?php foreach($q_hl->result() as $row):?>
+						<li>
+							<img src="<?php echo base_url()?>assets/images/news/thumb/<?php echo $row->news_image?>" alt="" width="300px" height="Auto" />
+							<p class="flex-caption">
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $row->news_title?>
+								</a> 					
+							</p>
+						</li>
+						<?php break;?>
+						<?php endforeach?>
+					</ul><div class="clear"></div>
+					<ul class="block" style="margin-top: 10px;">
+					<?php foreach(array_slice($q_hl->result(), 1, 5) as $row):?>
+						<li>
+							<p>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $row->news_title?>
+								</a>							
+							</p>
+						</li>
+						<?php endforeach ?>
+						</ul>
+				</div>
+			</div>
+			
+			<!-- Popular News -->
+			<div class="column-one-third">
+				<h5 class="line"><span>Nasional</span></h5>
+				<div class="outertight">
+					<ul class="block">
+						<?php foreach(array_slice($q_news_nas->result(), 0, 1) as $row):?>
+						<li>
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<img class="homeThumb" src="<?php echo base_url()?>assets/images/news/thumb/<?php echo $row->news_image?>" alt="MyPassion" class="alignleft" />
+							</a>
+							<p>	
+								<span><?php echo $this->custom->date_changer($row->news_date,1)?></span>
+								<h6>		
+									<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a></h6>					
+							</p>
+						</li>
+						<?php endforeach ?>				
+						
+						<?php foreach(array_slice($q_news_nas->result(), 1, 5) as $row):?>
+						<li>
+							<p>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>							
+							</p>
+						</li>
+						<?php endforeach ?>						
+					</ul>
+				</div>		
+			</div>
+			<!-- /Popular News -->
+			
+			<!-- Hot News -->
+			<div class="column-one-third">
+				<h5 class="line"><span>Internasional</span></h5>
+				<div class="outertight m-r-no">
+					<ul class="block">
+						<?php foreach(array_slice($q_news_inter->result(), 0, 1) as $row):?>
+						<li>
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<img class="homeThumb" src="<?php echo base_url()?>assets/images/news/thumb/<?php echo $row->news_image?>" alt="MyPassion" class="alignleft" />
+							</a>
+							<p>	
+								<span><?php echo $this->custom->date_changer($row->news_date,1)?></span>
+								<h6>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 42)?>
+								</a>
+								</h6>
+							</p>
+						</li>
+						<?php endforeach ?>									
+						<?php foreach(array_slice($q_news_inter->result(), 1, 5) as $row):?>
+						<li>
+							<p>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>								
+							</p>
+						</li>
+						<?php endforeach ?>		
+					</ul>
+				</div>			
+			</div>
+			<!-- /Hot News -->
+			<div class="clearx"></div>
+			
+			<!-- Popular News -->
+			<div class="column-one-third">
+				<h5 class="line"><span>EkBis</span></h5>
+				<div class="outertight m-r-no">
+					<ul class="block">
+						<?php foreach(array_slice($q_news_ekb->result(), 0, 1) as $row):?>
+						<li>
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<img class="homeThumb" src="<?php echo base_url()?>assets/images/news/thumb/<?php echo $row->news_image?>" alt="MyPassion" class="alignleft" />
+							</a>
+							<p>		
+								<span><?php echo $this->custom->date_changer($row->news_date,1)?></span>
+								<h6>						
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>
+								</h6>
+							</p>
+						</li>
+						<?php endforeach ?>				
+						
+						<?php foreach(array_slice($q_news_ekb->result(), 1, 5) as $row):?>
+						<li>
+							<p>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>							
+							</p>
+						</li>
+						<?php endforeach ?>						
+					</ul>
+				</div>		
+			</div>
+			
+			<!-- /Hot News -->
+			
+			
+			
+			<!-- Popular News -->
+			<div class="column-one-third">
+				<h5 class="line"><span>Politika</span></h5>
+				<div class="outertight">
+					<ul class="block">
+						<?php foreach(array_slice($q_news_pol->result(), 0, 1) as $row):?>
+						<li>
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<img class="homeThumb" src="<?php echo base_url()?>assets/images/news/thumb/<?php echo $row->news_image?>" alt="MyPassion" class="alignleft" />
+							</a>
+							<span><?php echo $this->custom->date_changer($row->news_date,1)?></span>
+							<p>								
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>						
+							</p>
+						</li>
+						<?php endforeach ?>				
+						
+						<?php foreach(array_slice($q_news_pol->result(), 1, 5) as $row):?>
+						<li>
+							<p>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>							
+							</p>
+						</li>
+						<?php endforeach ?>						
+					</ul>
+				</div>		
+			</div>
+			<!-- /Popular News -->
+			
+			
+			
+			<!-- Popular News -->
+			<div class="column-one-third">
+				<h5 class="line"><span>Kumkrim</span></h5>
+				<div class="outertight">
+					<ul class="block">
+						<?php foreach(array_slice($q_news_kum->result(), 0, 1) as $row):?>
+						<li>
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<img class="homeThumb" src="<?php echo base_url()?>assets/images/news/thumb/<?php echo $row->news_image?>" alt="MyPassion" class="alignleft" />
+							</a>
+							<p>	
+								<span><?php echo $this->custom->date_changer($row->news_date,1)?></span>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>						
+							</p>
+						</li>
+						<?php endforeach ?>				
+						
+						<?php foreach(array_slice($q_news_kum->result(), 1, 5) as $row):?>
+						<li>
+							<p>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>							
+							</p>
+						</li>
+						<?php endforeach ?>						
+					</ul>
+				</div>	
+				
+</div>
+			<div class="sidebar">
+		<!-- Main Content -->		
+		<div class="column" style="margin:0 0 10px 0px">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Manado Post Online -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9528794433985327"
+     data-ad-slot="6662265491"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>	
+			</a>
+		</div>
+<!-- /Popular News -->
+			
+			<!-- Hot News -->
+			<div class="column-one-third">
+				<h5 class="line"><span>Publika</span></h5>
+				<div class="outertight m-r-no">
+					<ul class="block">
+						<?php foreach(array_slice($q_news_pub->result(), 0, 1) as $row):?>
+						<li>
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<img class="homeThumb" src="<?php echo base_url()?>assets/images/news/thumb/<?php echo $row->news_image?>" alt="MyPassion" class="alignleft" />
+							</a>
+							<p>			
+								<span><?php echo $this->custom->date_changer($row->news_date,1)?></span>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>								
+							</p>
+						</li>
+						<?php endforeach ?>									
+						<?php foreach(array_slice($q_news_pub->result(), 1, 5) as $row):?>
+						<li>
+							<p>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>								
+							</p>
+						</li>
+						<?php endforeach ?>		
+					</ul>
+				</div>			
+			</div>
+			<!-- /Hot News -->
+			
+			
+			<!-- Hot News -->
+			<div class="column-one-third">
+				<h5 class="line"><span>Teropong</span></h5>
+				<div class="outertight m-r-no">
+					<ul class="block">
+						<?php foreach(array_slice($q_news_ter->result(), 0, 1) as $row):?>
+						<li>
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<img class="homeThumb" src="<?php echo base_url()?>assets/images/news/thumb/<?php echo $row->news_image?>" alt="MyPassion" class="alignleft" />
+							</a>
+							<p>		
+								<span><?php echo $this->custom->date_changer($row->news_date,1)?></span>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>								
+							</p>
+						</li>
+						<?php endforeach ?>									
+						<?php foreach(array_slice($q_news_ter->result(), 1, 5) as $row):?>
+						<li>
+							<p>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>								
+							</p>
+						</li>
+						<?php endforeach ?>		
+					</ul>
+				</div>			
+			</div>
+			<!-- /Hot News -->
+			
+			
+			
+			
+			
+		</div>
+		<!-- /Main Content -->
+		
+		<!-- Left Sidebar -->
+		<div class="column-one-third">	
+			<div class="sidebar">
+				<h5 class="line"><span>Liputan Khusus</span></h5>
+				<ul class="ads125">
+					<?php foreach($q_news_lipsus->result() as $row):?>
+					<li>
+						<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+							<img src="<?php echo base_url()?>assets/images/news/thumb/<?php echo $row->news_image?>" alt="MyPassion" />												
+						</a>
+						<a class="subTitleS" href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+							<?php echo $row->news_subtitle?>
+						</a>
+						<a class="title" href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+							<?php echo $row->news_title?>
+						</a>
+					</li>										
+					<?php endforeach?>
+				</ul>
+			</div>
+
+			
+			<div class="sidebar">
+				<div id="tabs">
+					<ul>
+						<li><a href="#tabs1">TERPOPULER</a></li>
+						<li><a href="#tabs2">TERBARU</a></li>
+					</ul>
+					<div id="tabs1">
+						<ul>
+							<?php foreach($q_popular->result() as $row):?>
+							<li>
+								<a class="title" href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $row->news_title?>
+								</a>
+								<span class="meta"><?php echo $this->custom->date_changer($row->news_date,1)?></span>                                     
+							</li>
+							<?php endforeach?>
+						</ul>
+					</div>
+					<div id="tabs2">
+						<ul>
+							<?php foreach($q_latest->result() as $row):?>
+							<li>
+								<a class="title" href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $row->news_title?>
+								</a>
+								<span class="meta"><?php echo $this->custom->nicetime($row->news_date)?></span>                                     
+							</li>
+							<?php endforeach?>
+						</ul>
+					</div>									
+				</div>
+			</div>
+			
+			<div class="sidebar">
+				<h5 class="line"><span>ePaper Manado Post</span></h5>
+				<a href="http://www.manadopostonline.com/epaper/m" target="_blank"><img src="<?php echo base_url()?>epaper/koran1.jpg" alt="ePaper Manado Post" /></a>     
+			</div>
+			
+			<!--
+			<div class="sidebar">
+				<h5 class="line"><span>Video</span></h5>												
+				<object id="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" name="player" width="400" height="315">
+					<param name="movie" value="<?php echo base_url()?>assets2/plugin/video/player-licensed.swf" />
+					<param name="allowfullscreen" value="true" />
+					<param name="allowscriptaccess" value="always" />
+					<param name="flashvars" value="file=<?php echo base_url()?>assets2/video/video.mp4&image=<?php echo base_url()?>assets2/video/thumb/video.jpg" />
+					<embed
+					type="application/x-shockwave-flash"
+					id="player2"
+					name="player2"
+					src="<?php echo base_url()?>assets2/plugin/video/player-licensed.swf" 
+					width="300" 			
+					allowscriptaccess="always" 
+					allowfullscreen="true"
+					flashvars="file=<?php echo base_url()?>assets2/video/video.mp4&image=<?php echo base_url()?>assets2/video/thumb/video.jpg" 
+					/>
+				</object>									
+			</div>
+			-->		
+			
+<div class="sidebar">
+		<!-- Main Content -->		
+		<div class="column" style="margin:0 0 10px 0px">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Manado Post Online -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9528794433985327"
+     data-ad-slot="6662265491"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>	
+			</a>
+		</div>
+			<div class="sidebar">
+				<h5 class="line"><span>Video</span></h5>
+				<script src="http://jwpsrv.com/library/G5dywGqKEeKqoCIACp8kUw.js"></script>			
+				<div id='my-video'></div>
+				<script type='text/javascript'>					
+					jwplayer('my-video').setup({
+						file: '<?php echo base_url()?>assets2/video/video.mp4',
+						image: '<?php echo base_url()?>assets2/video/thumb/video.jpg',
+						width: '300',
+						height: '250'
+					});
+				</script>								
+			</div>
+			
+<div class="sidebar">
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+			
+	
+<div class="fb-page" data-href="https://www.facebook.com/Manado-Post-935657596500598/?ref=bookmarks" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/Manado-Post-935657596500598/?ref=bookmarks"><a href="https://www.facebook.com/Manado Post">Manado Post</a></blockquote></div></div>		
+<div class="sidebar">
+            <a class="twitter-timeline"  href="https://twitter.com/MdoPostOnline" data-widget-id="634220252130230272">Tweet oleh @MdoPostOnline</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          		
+	
+</div>
+
+			<div class="sidebar">
+				<h5 class="line"><span>Ads Spot.</span></h5>
+				<!-- IKLAN A6-->
+				<a href="#" target="_blank">
+					<div class="sidebar">
+		<!-- Main Content -->		
+		<div class="column" style="margin:0 0 10px 0px">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Manado Post Online -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9528794433985327"
+     data-ad-slot="6662265491"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>	
+			</a>
+		</div>
+				</a>
+			</div>	
+			
+			
+
+		
+		</div>
+		<!-- /Left Sidebar -->
+		
+		<div class="column">
+			<!-- IKLAN A7 -->						
+			<div class="column-two-fourth" style="float: left; margin: 0px 4px 0px 0px;">
+				<a href="#">
+					<img src="<?php echo base_url()?>assets2/img/iklan/A6.jpg">
+				</a>
+			</div>
+			
+		</div>
+					
+		<div class="main-content">
+			<!-- Popular News -->
+			<div class="column">
+				
+				<div class="outertight">
+					<h5 class="line"><span>Minahasa</span></h5>
+					<div class="outertight m-r-no">
+						<?php foreach(array_slice($q_news_min->result(), 0, 1) as $row):?>
+						<div class="flexslider">
+							<ul class="slides">										
+								<li>
+									<img src="<?php echo  base_url().'assets/images/news/thumb/'.$row->news_image?>" alt="MyPassion" />
+								</li>	
+							</ul>
+						</div>
+						
+						<h6 class="regular">		
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<?php echo $this->custom->cut($row->news_title, 45)?>
+							</a>
+						</h6>
+						<p><?php echo $this->custom->trim($row->news_content, 39)?></p>
+						<?php endforeach?>
+					</div>
+					
+					<ul class="block">
+						<?php foreach(array_slice($q_news_min->result(), 1, 3) as $row):?>
+						<li>							
+							<p>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>
+							</p>
+						</li>
+						<?php endforeach?>
+					</ul>
+					
+				</div>
+				
+				
+				
+				<div class="outertight">
+					<h5 class="line"><span>Nusa Utara</span></h5>
+					<div class="outertight m-r-no">
+						<?php foreach(array_slice($q_news_nus->result(), 0, 1) as $row):?>
+						<div class="flexslider">
+							<ul class="slides">										
+								<li>
+									<img src="<?php echo  base_url().'assets/images/news/thumb/'.$row->news_image?>" alt="MyPassion" />
+								</li>	
+							</ul>
+						</div>
+						
+						<h6 class="regular">		
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<?php echo $this->custom->cut($row->news_title, 45)?>
+							</a>
+						</h6>
+						
+						<p><?php echo $this->custom->trim($row->news_content, 39)?></p>
+						<?php endforeach?>
+					</div>
+					
+					<ul class="block">
+						<?php foreach(array_slice($q_news_nus->result(), 1, 3) as $row):?>
+						<li>
+							
+							<p>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>
+							</p>
+						</li>
+						<?php endforeach?>
+					</ul>
+					
+				</div>
+				
+				<div class="outertight m-r-no">
+					<h5 class="line"><span>Bolmong Raya</span></h5>
+					
+					<div class="outertight m-r-no">
+						<?php foreach(array_slice($q_news_bol->result(), 0, 1) as $row):?>
+						<div class="flexslider">
+							<ul class="slides">										
+								<li>
+									<img src="<?php echo  base_url().'assets/images/news/thumb/'.$row->news_image?>" alt="MyPassion" />
+								</li>	
+							</ul>
+						</div>						
+						<h6 class="regular">		
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<?php echo $this->custom->cut($row->news_title, 45)?>
+							</a>
+						</h6>
+						<p><?php echo $this->custom->trim($row->news_content, 39)?></p>
+						<?php endforeach?>
+					</div>
+					
+					<ul class="block">
+						<?php foreach(array_slice($q_news_bol->result(), 1, 3) as $row):?>
+						<li>
+							
+							<p>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>
+							</p>
+						</li>
+						<?php endforeach?>
+					</ul>
+				</div>                   	
+			</div>
+			<!-- /Popular News -->				
+		</div>
+		
+
+		
+		<div class="main-content">
+			<!-- List News -->
+			<div class="column">	
+				
+				<div class="outertight">
+					<h5 class="line"><span>Kawanuapolis</span></h5>					
+					<?php foreach(array_slice($q_news_kaw->result(), 0, 1) as $row):?>
+						<img src="<?php echo  base_url().'assets/images/news/thumb/'.$row->news_image?>" alt="MyPassion" />						
+						<h6 class="regular">		
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<?php echo $this->custom->cut($row->news_title, 45)?>
+							</a>
+						</h6>
+						<p><?php echo $this->custom->trim($row->news_content, 20)?></p>
+					<?php endforeach?>
+					
+					<ul class="block">
+						<?php foreach(array_slice($q_news_kaw->result(), 1, 5) as $row):?>
+						<li>
+							<p>												
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>
+								
+							</p>
+						</li>
+						<?php endforeach?>
+					</ul>
+				</div>
+				
+				<div class="outertight">
+					<h5 class="line"><span>Olahraga</span></h5>
+					<?php foreach(array_slice($q_news_ola->result(), 0, 1) as $row):?>
+						<img src="<?php echo  base_url().'assets/images/news/thumb/'.$row->news_image?>" alt="MyPassion" />						
+						<h6 class="regular">		
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<?php echo $this->custom->cut($row->news_title, 45)?>
+							</a>
+						</h6>
+						<p><?php echo $this->custom->trim($row->news_content, 20)?></p>
+					<?php endforeach?>
+					<ul class="block">
+						<?php foreach(array_slice($q_news_ola->result(), 1, 5) as $row):?>
+						<li>
+							<p>													
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>								
+							</p>
+						</li>
+						<?php endforeach?>
+					</ul>										
+				</div>	
+				
+				
+				<div class="outertight m-r-no">
+					<h5 class="line"><span>Sumikolah</span></h5>
+					<?php foreach(array_slice($q_news_sum->result(), 0, 1) as $row):?>
+						<img src="<?php echo  base_url().'assets/images/news/thumb/'.$row->news_image?>" alt="MyPassion" />						
+						<h6 class="regular">		
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<?php echo $this->custom->cut($row->news_title, 45)?>
+							</a>
+						</h6>
+						<p><?php echo $this->custom->trim($row->news_content, 20)?></p>
+					<?php endforeach?>
+					<ul class="block">
+						<?php foreach(array_slice($q_news_sum->result(), 1, 5) as $row):?>
+						<li>
+							<p>													
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>
+								
+							</p>
+						</li>
+						<?php endforeach?>
+					</ul>										
+				</div>	
+				
+				
+				<div class="outertight">
+					<h5 class="line"><span>X-Presi</span></h5>
+					<?php foreach(array_slice($q_news_x->result(), 0, 1) as $row):?>
+						<img src="<?php echo  base_url().'assets/images/news/thumb/'.$row->news_image?>" alt="MyPassion" />						
+						<h6 class="regular">		
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<?php echo $this->custom->cut($row->news_title, 45)?>
+							</a>
+						</h6>
+						<p><?php echo $this->custom->trim($row->news_content, 20)?></p>
+					<?php endforeach?>
+					<ul class="block">
+						<?php foreach(array_slice($q_news_x->result(), 1, 5) as $row):?>
+						<li>
+							<p>												
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>
+								
+							</p>
+						</li>
+						<?php endforeach?>
+					</ul>
+				</div>
+				
+				<div class="outertight">
+					<h5 class="line"><span>Health</span></h5>
+					<?php foreach(array_slice($q_news_hea->result(), 0, 1) as $row):?>
+						<img src="<?php echo  base_url().'assets/images/news/thumb/'.$row->news_image?>" alt="MyPassion" />						
+						<h6 class="regular">		
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<?php echo $this->custom->cut($row->news_title, 45)?>
+							</a>
+						</h6>
+						<p><?php echo $this->custom->trim($row->news_content, 20)?></p>
+					<?php endforeach?>
+					<ul class="block">
+						<?php foreach(array_slice($q_news_hea->result(), 1, 5) as $row):?>
+						<li>
+							<p>													
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>					
+							</p>
+						</li>
+						<?php endforeach?>
+					</ul>										
+				</div>	
+				
+							
+			</div> 
+			
+			<div class="container">
+				
+				<div class="column-one-third">
+					<h5 class="line"><span>Otomotif</span></h5>
+					<?php foreach(array_slice($q_news_oto->result(), 0, 1) as $row):?>
+						<img src="<?php echo  base_url().'assets/images/news/thumb/'.$row->news_image?>" alt="MyPassion" class="imgWidth" />						
+						<h6 class="regular">		
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<?php echo $this->custom->cut($row->news_title, 45)?>
+							</a>
+						</h6>
+						<p><?php echo $this->custom->trim($row->news_content, 20)?></p>
+					<?php endforeach?>
+					<ul class="block">
+						<?php foreach(array_slice($q_news_oto->result(), 1, 5) as $row):?>
+						<li>
+							<p>													
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>
+								
+							</p>
+						</li>
+						<?php endforeach?>
+					</ul>			
+				</div>
+				
+				<div class="column-one-third">
+					<h5 class="line"><span>Show & Celebrities</span></h5>
+					<?php foreach(array_slice($q_news_sho->result(), 0, 1) as $row):?>
+						<img src="<?php echo  base_url().'assets/images/news/thumb/'.$row->news_image?>" alt="MyPassion" class="imgWidth" />						
+						<h6 class="regular">		
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<?php echo $this->custom->cut($row->news_title, 45)?>
+							</a>
+						</h6>
+						<p><?php echo $this->custom->trim($row->news_content, 20)?></p>
+					<?php endforeach?>
+					<ul class="block">
+						<?php foreach(array_slice($q_news_sho->result(), 1, 5) as $row):?>
+						<li>
+							<p>													
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>
+								
+							</p>
+						</li>
+						<?php endforeach?>
+					</ul>			
+				</div>
+				
+				<div class="column-one-third">
+					<h5 class="line"><span>Teknologi</span></h5>
+					<?php foreach(array_slice($q_news_vil->result(), 0, 1) as $row):?>
+						<img src="<?php echo  base_url().'assets/images/news/thumb/'.$row->news_image?>" alt="MyPassion" class="imgWidth"/>						
+						<h6 class="regular">		
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<?php echo $this->custom->cut($row->news_title, 45)?>
+							</a>
+						</h6>
+						<p><?php echo $this->custom->trim($row->news_content, 20)?></p>
+					<?php endforeach?>
+					<ul class="block">
+						<?php foreach(array_slice($q_news_vil->result(), 1, 5) as $row):?>
+						<li>
+							<p>													
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>
+								
+							</p>
+						</li>
+						<?php endforeach?>
+					</ul>			
+				</div>
+				
+				<!-- /Popular News -->
+			
+			<!-- Hot News -->
+			<div class="column-one-third">
+				<h5 class="line"><span>Opini</span></h5>
+				<div class="outertight m-r-no">
+					<ul class="block">
+						<?php foreach(array_slice($q_news_opi->result(), 0, 1) as $row):?>
+						<li>
+							<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+								<img class="homeThumb" src="<?php echo base_url()?>assets/images/news/thumb/<?php echo $row->news_image?>" alt="MyPassion" class="alignleft" />
+							</a>
+							<p>								
+								<span><?php echo $this->custom->date_changer($row->news_date,1)?></span>
+								<h6>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a></h6>								
+							</p>
+						</li>
+						<?php endforeach ?>									
+						<?php foreach(array_slice($q_news_opi->result(), 1, 5) as $row):?>
+						<li>
+							<p>
+								<a href="<?php echo $this->custom->time_url_m($row->news_date, $row->news_url, $row->news_id)?>">
+									<?php echo $this->custom->cut($row->news_title, 45)?>
+								</a>								
+							</p>
+						</li>
+						<?php endforeach ?>		
+					</ul>
+				</div>			
+			</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>    
+</section>
+<!-- / Content -->

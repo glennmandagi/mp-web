@@ -1,0 +1,49 @@
+			<div class="sidebar">
+				
+				<h5 class="line"><span>Polling Pilkada</span></h5>
+				<div class="comment-formx">
+						<div align="center" class="pol_img">
+							<img src="<?php echo base_url()?>assets2/images/poling.jpg">
+						</div>
+						<form id="addCommentForm" method="post" action="<?php echo base_url()?>home/pol">
+							<?php 
+								$num=0;
+								foreach($q_pol->result() as $row): 
+									$num= $num+$row->vote_num;
+								endforeach;
+							$n=0;
+							foreach($q_pol->result() as $row): ?>
+							
+								<?php 	
+								if($n!=$row->vote_vote_group_id):
+								?>
+									<?php if($n!=0):?>
+									</div><!-- form pol_wrap -->
+									<?php endif?>
+									<div class="form pol_wrap">
+									<h6 class="line smallh6"><span><?php echo $row->vote_group_name?></h6>
+								<?php 
+									$n=$row->vote_vote_group_id;
+								endif;
+								?>
+								<div class="pol_radio">
+									<input type="radio" name="vote_id" value="<?php echo $row->vote_id?>" >
+								</div>
+								<div class="pol_txt">
+									<label><?php echo $row->vote_name?></label>
+								</div>
+								<div class="clearx"></div>
+								<div class="pol_percent">
+								(<?php echo round($row->vote_num /$num *100, 2);?> % / <?php echo $row->vote_num.' Pemilih'?> )
+								</div>
+								<div class="clearx"></div>
+							<?php endforeach;?>
+							</div><!-- form pol_wrap -->
+							
+							<div align="center" class="pol_btn">
+								<input type="submit" value="Pilih !" id="submit" class="post-comment">
+							</div>
+						</form>
+				</div><!-- comment-formx-->
+			
+			</div>

@@ -1,0 +1,5 @@
+<!-- Main Content -->
+		
+		<div align="center" style="margin: 0 0 10px 0">
+			<img src="<?php echo base_url()?>assets2/img/iklan/A1_mdo.jpg">
+		</div>
